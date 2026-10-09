@@ -1,0 +1,640 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7faf8;
+    color: #173c29;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-container {
+    width: 400px;
+    margin: 90px auto;
+    padding: 45px;
+    background: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 60, 30, 0.12);
+}
+
+.login-logo {
+    font-size: 45px;
+}
+
+.login-container h1 {
+    margin: 5px 0;
+    color: #176b35;
+    font-size: 36px;
+}
+
+.login-container h2 {
+    margin: 5px 0 30px;
+    color: #728078;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+    border: 1px solid #d5dfd8;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #198344;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#loginMessage {
+    color: #c0392b;
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-container {
+    display: none;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 290px;
+    height: 100vh;
+    padding: 32px 24px;
+    background: linear-gradient(180deg, #0e4328, #124d2e);
+    color: white;
+    overflow: hidden;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.brand-logo {
+    font-size: 43px;
+}
+
+.brand h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.brand p {
+    margin: 5px 0 0;
+    color: #c8ddd0;
+    font-size: 13px;
+}
+
+.sidebar-menu button,
+#logoutBtn {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar-menu button span,
+#logoutBtn span {
+    margin-left: 12px;
+}
+
+.sidebar-menu button:hover,
+.sidebar-menu button.active {
+    background: #42a866;
+}
+
+#logoutBtn {
+    position: absolute;
+    left: 24px;
+    bottom: 28px;
+    width: calc(100% - 48px);
+}
+
+#logoutBtn:hover {
+    background: #a9362e;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+    margin-left: 290px;
+    padding: 42px 45px;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    color: #123e28;
+}
+
+.dashboard-header p {
+    margin: 0;
+    color: #718078;
+    font-size: 16px;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.date {
+    color: #53665b;
+    font-size: 14px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #243f31;
+}
+
+.profile-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #194e35;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* =========================
+   HERO BANNER
+========================= */
+
+.hero-banner {
+    position: relative;
+    min-height: 225px;
+    margin-bottom: 30px;
+    padding: 35px 32px;
+    border-radius: 18px;
+    background: linear-gradient(
+        100deg,
+        #e7f4e8,
+        #f2f8ed
+    );
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-logo {
+    display: inline-block;
+    font-size: 55px;
+    vertical-align: middle;
+}
+
+.hero-content h2 {
+    display: inline-block;
+    margin: 0 0 0 10px;
+    font-size: 45px;
+    color: #123e28;
+    vertical-align: middle;
+}
+
+.hero-tagline {
+    margin: 0 0 25px 68px;
+    color: #176b35;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.hero-tagline span {
+    margin: 0 8px;
+}
+
+.hero-content > p {
+    width: 400px;
+    margin: 0;
+    color: #476653;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.hero-image {
+    position: absolute;
+    right: 55px;
+    bottom: -15px;
+    font-size: 115px;
+}
+
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 145px;
+    padding: 20px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #dce8df;
+}
+
+.green-card {
+    background: #f5fbf6;
+}
+
+.orange-card {
+    background: #fffaf0;
+    border-color: #f4e2b8;
+}
+
+.red-card {
+    background: #fff7f7;
+    border-color: #f0cccc;
+}
+
+.stat-icon {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #42a866;
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.orange-card .stat-icon {
+    background: #f4ad35;
+}
+
+.red-card .stat-icon {
+    background: #ef4b43;
+}
+
+.stat-info h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #284637;
+}
+
+.stat-info strong {
+    display: block;
+    font-size: 28px;
+    color: #101f17;
+}
+
+.stat-info p {
+    margin: 6px 0 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+
+/* =========================
+   LOWER DASHBOARD
+========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 22px;
+}
+
+.recent-section,
+.quick-actions {
+    padding: 20px;
+    background: white;
+    border: 1px solid #dce5df;
+    border-radius: 16px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2,
+.quick-actions h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #173c29;
+}
+
+.section-title button {
+    border: none;
+    background: none;
+    color: #198344;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.8fr;
+    padding: 13px 15px;
+    background: #f1f5f2;
+    border-radius: 9px;
+    color: #52645a;
+    font-size: 12px;
+}
+
+.empty-dataset {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.empty-icon {
+    width: 78px;
+    height: 78px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #eaf6ed;
+    font-size: 35px;
+}
+
+.empty-dataset h3 {
+    margin: 15px 0 7px;
+    font-size: 17px;
+}
+
+.empty-dataset p {
+    margin: 0 0 20px;
+    color: #718078;
+}
+
+.empty-dataset button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #198344;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-actions h2 {
+    margin-bottom: 18px;
+}
+
+.quick-actions button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.quick-actions button strong {
+    flex: 1;
+}
+
+.quick-primary {
+    background: #198344;
+    color: white;
+}
+
+.quick-secondary {
+    background: #e8f4ea;
+    color: #245f3a;
+}
+
+.quick-logout {
+    background: #f0f3f4;
+    color: #30463a;
+}
+
+
+/* =========================
+   HEALTH MESSAGE
+========================= */
+
+.health-message {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 20px;
+    background: #eef7f0;
+    border: 1px solid #dcebe0;
+    border-radius: 15px;
+    color: #28573a;
+}
+
+.health-leaf {
+    font-size: 25px;
+}
+
+
+/* =========================
+   ADD DATASET
+========================= */
+
+#addDatasetSection,
+#recordsSection {
+    display: none;
+    padding: 35px;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #dce5df;
+}
+
+#addDatasetSection h1,
+#recordsSection h1 {
+    margin-top: 0;
+    color: #174b2d;
+}
+
+#addDatasetSection label {
+    display: block;
+    margin: 20px 0 8px;
+    font-weight: bold;
+}
+
+#addDatasetSection input,
+#addDatasetSection select,
+#addDatasetSection textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d3ded7;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#addDatasetSection textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+#saveDatasetBtn {
+    margin-top: 25px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #198344;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#datasetMessage {
+    color: #198344;
+    font-weight: bold;
+}
+
+
+/* =========================
+   DATASET RECORDS
+========================= */
+
+.dataset-card {
+    padding: 22px;
+    margin-top: 18px;
+    border: 1px solid #dfe8e2;
+    border-radius: 14px;
+    background: #fbfdfb;
+}
+
+.dataset-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.dataset-card h3 {
+    color: #176b35;
+}
+
+.dataset-card p {
+    color: #5d6c63;
+}
+
+.delete-btn {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #c0392b;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        right: 20px;
+    }
+}
+
+.brand-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.login-logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.hero-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}

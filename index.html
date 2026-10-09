@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HerbCare Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOGIN PAGE
+    ========================== -->
+
+    <div id="loginPage" class="login-container">
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                <img src="logo.png" alt="HerbCare Logo">
+            </div>
+
+            <h1>HerbCare</h1>
+
+            <p class="login-subtitle">
+                Admin Panel
+            </p>
+
+            <div class="input-group">
+
+                <label>Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                >
+
+            </div>
+
+            <button id="loginBtn" class="login-btn">
+                Login
+            </button>
+
+            <p id="loginMessage" class="login-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ADMIN PAGE
+    ========================== -->
+
+    <div id="adminPage" style="display: none;">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+
+                    <img
+                        src="logo.png"
+                        alt="HerbCare Logo"
+                    >
+
+                </div>
+
+                <div>
+
+                    <h2>HerbCare</h2>
+
+                    <p>
+                        Healthy Plants,<br>
+                        Healthier Lives
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <button
+                    id="dashboardBtn"
+                    class="nav-btn active"
+                >
+                    <span>▦</span>
+                    Dashboard
+                </button>
+
+                <button
+                    id="addDatasetBtn"
+                    class="nav-btn"
+                >
+                    <span>＋</span>
+                    Add Dataset
+                </button>
+
+                <button
+                    id="recordsBtn"
+                    class="nav-btn"
+                >
+                    <span>▤</span>
+                    Dataset Records
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    id="logoutBtn"
+                    class="logout-btn"
+                >
+                    <span>↪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- =========================
+                 DASHBOARD
+            ========================== -->
+
+            <section id="dashboardSection">
+
+                <div class="top-header">
+
+                    <div>
+
+                        <h1>
+                            Good Morning, Admin!
+                        </h1>
+
+                        <p>
+                            Welcome to the HerbCare Admin Dashboard.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-profile">
+
+                        <div class="admin-avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>Admin</strong>
+
+                            <small>
+                                Administrator
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO -->
+
+                <div class="hero-banner">
+
+                    <div class="hero-content">
+
+                        <div class="hero-brand">
+
+                            <div class="hero-logo">
+
+                                <img
+                                    src="logo.png"
+                                    alt="HerbCare Logo"
+                                >
+
+                            </div>
+
+                            <div>
+
+                                <h2>HerbCare</h2>
+
+                                <div class="hero-tagline">
+                                    Monitor • Protect • Grow
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p>
+                            A smart system for monitoring the health
+                            of herbal plants using image analysis.
+                        </p>
+
+                    </div>
+
+                    <div class="hero-image">
+                        🌿
+                    </div>
+
+                </div>
+
+
+                <!-- STAT CARDS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Total Datasets
+                            </p>
+
+                            <h2 id="totalDatasets">
+                                0
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card good">
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Good Condition
+                            </p>
+
+                            <h2 id="goodDatasets">
+                                0
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card attention">
+
+                        <div class="stat-icon">
+                            !
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Attention
+                            </p>
+
+                            <h2 id="attentionDatasets">
+                                0
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card poor">
+
+                        <div class="stat-icon">
+                            ×
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Poor Condition
+                            </p>
+
+                            <h2 id="poorDatasets">
+                                0
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DASHBOARD GRID -->
+
+                <div class="dashboard-grid">
+
+                    <!-- RECENT DATASETS -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Recent Dataset Records
+                                </h2>
+
+                                <p>
+                                    Latest plant datasets added
+                                </p>
+
+                            </div>
+
+                            <button
+                                id="viewRecordsBtn"
+                                class="view-btn"
+                            >
+                                View All
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="recentRecords"
+                            class="recent-records"
+                        >
+
+                            <div class="empty-state">
+
+                                <div class="empty-icon">
+                                    🌱
+                                </div>
+
+                                <h3>
+                                    No datasets yet
+                                </h3>
+
+                                <p>
+                                    Add your first plant dataset
+                                    to get started.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Quick Actions
+                                </h2>
+
+                                <p>
+                                    Manage your datasets
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button
+                                id="quickAddDataset"
+                                class="quick-action"
+                            >
+
+                                <div class="quick-icon">
+                                    ＋
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Add Dataset
+                                    </strong>
+
+                                    <span>
+                                        Add a new plant image
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                id="quickViewRecords"
+                                class="quick-action"
+                            >
+
+                                <div class="quick-icon">
+                                    ▤
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        View Records
+                                    </strong>
+
+                                    <span>
+                                        Manage existing datasets
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                id="quickLogout"
+                                class="quick-action"
+                            >
+
+                                <div class="quick-icon logout-icon">
+                                    ↪
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Logout
+                                    </strong>
+
+                                    <span>
+                                        Sign out of admin panel
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEALTH MESSAGE -->
+
+                <div class="health-message">
+
+                    <div class="health-icon">
+                        🌱
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Healthy Plants, Healthier Lives
+                        </h3>
+
+                        <p>
+                            HerbCare helps organize plant health
+                            information and supports better
+                            herbal plant monitoring.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 ADD DATASET
+            ========================== -->
+
+            <section
+                id="addDatasetSection"
+                style="display: none;"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1>
+                            Add Dataset
+                        </h1>
+
+                        <p>
+                            Add a new herbal plant dataset.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-card">
+
+                    <div class="form-header">
+
+                        <h2>
+                            Plant Dataset Information
+                        </h2>
+
+                        <p>
+                            Provide the required information
+                            for the plant image.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Plant Image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="plantImage"
+                            accept="image/*"
+                        >
+
+                        <small>
+                            Upload a clear image of the plant.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Plant Name
+                        </label>
+
+                        <select id="plantName">
+
+                            <option value="Oregano">
+                                Oregano
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Plant Condition
+                        </label>
+
+                        <select id="plantCondition">
+
+                            <option value="Good">
+                                Good
+                            </option>
+
+                            <option value="Attention">
+                                Attention
+                            </option>
+
+                            <option value="Poor">
+                                Poor
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Description
+                        </label>
+
+                        <textarea
+                            id="description"
+                            rows="5"
+                            placeholder="Enter plant description..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            id="saveDatasetBtn"
+                            class="save-btn"
+                        >
+                            Save Dataset
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="datasetMessage"
+                        class="dataset-message"
+                    ></p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 DATASET RECORDS
+            ========================== -->
+
+            <section
+                id="recordsSection"
+                style="display: none;"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1>
+                            Dataset Records
+                        </h1>
+
+                        <p>
+                            View and manage all plant datasets.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="datasetRecords"
+                    class="dataset-records"
+                >
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
